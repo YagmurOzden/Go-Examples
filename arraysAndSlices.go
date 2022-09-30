@@ -2,7 +2,9 @@ package main
 
 import "fmt"
 
+// ##### USE SLICES RATHER THAN ARRAYS #####
 func main() {
+	// ~~ ARRAYS ~~
 	a := [3]int{1, 2, 3}
 	b := [...]int{1, 2, 3}
 	c := [3]int{1, 3, 5} // a[1]==3
@@ -43,6 +45,29 @@ func main() {
 	// [0 0 0 0 0]
 	// [0 1 2 0 0]
 	// [0 1 2 3 4]
+	fmt.Print("###########")
+
+	// ~~ SLICES ~~
+	// Slices are similar to arrays, but are more powerful and flexible.
+	// Like arrays, slices are also used to store multiple values of the same type in a single variable.
+	// However, unlike arrays, the length of a slice can grow and shrink as you see fit.
+	slice1 := []int{}
+	fmt.Println(len(slice1))
+	fmt.Println(cap(slice1))
+	fmt.Println(slice1)
+
+	slice2 := []string{"Use", "Slices", "rather", "than", "arrays"}
+	fmt.Println(len(slice2))
+	fmt.Println(cap(slice2))
+	fmt.Println(slice2)
+	// OUTPUT:
+	// 0
+	// 0
+	// []
+	// 5
+	// 5
+	// [Use Slices rather than arrays]
+
 }
 
 //Arrays are used to store multiple values of the same type in a single variable, instead of declaring separate variables for each value.
